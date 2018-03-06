@@ -9,6 +9,12 @@
 *.userosscache
 *.sln.docstates
 
+ClientApp/src/**/*.js
+ClientApp/src/**/*.js.map
+
+wwwroot/dist
+tests
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
