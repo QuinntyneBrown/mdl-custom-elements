@@ -1,2 +1,2 @@
 ﻿import "./icon.component";
-import "./mdl-button.component";
+import "./button.component";

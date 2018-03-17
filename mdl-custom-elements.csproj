@@ -9,10 +9,4 @@
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0-preview1-final" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="ClientApp\src\mdl-button.component.css">
-      <DependentUpon>mdl-button.component.ts</DependentUpon>
-    </None>
-  </ItemGroup>
-
 </Project>
