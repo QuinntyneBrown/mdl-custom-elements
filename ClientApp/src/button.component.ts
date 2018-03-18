@@ -2,7 +2,7 @@ import { html, TemplateResult, render } from "lit-html";
 import { repeat } from "lit-html/lib/repeat";
 import { unsafeHTML } from "lit-html/lib/unsafe-html";
 
-const styles = unsafeHTML(`<style>${require("./mdl-button.component.css")}<style>`);
+const styles = unsafeHTML(`<style>${require("./button.component.css")}<style>`);
 
 export class MdlButtonComponent extends HTMLElement {
     constructor() {

@@ -22,6 +22,9 @@ export class CardComponent extends HTMLElement {
         if (!this.hasAttribute('role'))
             this.setAttribute('role', 'card');
 
+        this.classList.add("mdl-card");
+        this.classList.add("mdl-shadow--2dp");
+
         this._bind();
         this._setEventListeners();
     }
@@ -29,24 +32,14 @@ export class CardComponent extends HTMLElement {
     get template(): TemplateResult {
         return html`
             ${styles}
-              <div class="mdl-card__title">
+            <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">
-                    <slot></slot>
+                    <slot name="title"></slot>
                 </h2>
-              </div>
-              <div class="mdl-card__supporting-text">
+            </div>
+            <div class="mdl-card__supporting-text">
                 <slot></slot>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  <slot></slot>
-                </a>
-              </div>
-              <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                  <i class="material-icons">share</i>
-                </button>
-              </div>
+            </div>
         `;
     }
 
@@ -70,4 +63,4 @@ export class CardComponent extends HTMLElement {
     }
 }
 
-customElements.define(`ce-card`,CardComponent);
+customElements.define(`mdl-card`,CardComponent);
