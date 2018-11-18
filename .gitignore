@@ -12,7 +12,7 @@
 ClientApp/src/**/*.js
 ClientApp/src/**/*.js.map
 
-wwwroot/dist
+dist
 tests
 
 # User-specific files (MonoDevelop/Xamarin Studio)

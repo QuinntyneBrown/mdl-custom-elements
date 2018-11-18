@@ -1,36 +1,32 @@
-const webpack = require('webpack');
-const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const path = require("path");
-
-function root(__path) {
-    return path.join(__dirname, __path);
-}
+const path = require('path');
 
 module.exports = {
-    entry: {
-        'app': './ClientApp/src/main'
-    },
+    entry: './src/main.ts',
+    mode: 'development',
     output: {
-        path: __dirname + "/wwwroot/dist",
-        filename: "[name].js",
-        publicPath: "wwwroot/dist/"
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'app.js'
     },
     resolve: {
-        extensions: ['.ts', '.js', '.css',]
+        extensions: ['.ts','.js']
     },
     module: {
-        loaders: [
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['raw-loader']
+            },
             {
                 test: /\.ts$/,
-                use: [{ loader: 'awesome-typescript-loader' }],
-                exclude: [/\.(spec|e2e)\.ts$/]
-            },
-            { test: /\.css$/, loader: 'raw-loader' },
-            { test: /\.html$/, loaders: ['html-loader'] },
+                exclude: /node_modules/,
+                use: ['awesome-typescript-loader']
+            }
         ]
     },
-    plugins: [
-
-    ]
+    
+    devServer: {
+        historyApiFallback: true,
+        compress: true,
+        port: 9000
+      }
 };

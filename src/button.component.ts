@@ -1,6 +1,6 @@
 import { html, TemplateResult, render } from "lit-html";
-import { repeat } from "lit-html/lib/repeat";
-import { unsafeHTML } from "lit-html/lib/unsafe-html";
+import { repeat } from "lit-html/directives/repeat";
+import { unsafeHTML } from "lit-html/directives/unsafe-html";
 
 const styles = unsafeHTML(`<style>${require("./button.component.css")}<style>`);
 
